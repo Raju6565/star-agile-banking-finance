@@ -10,7 +10,12 @@
     command : sudo apt-get install -y docker.io
 
   - name : Start Docker Service
-    command : sudo systemctl start docker 
+    command : sudo systemctl start docker
+    - name: stop container
+    command: sudo docker stop finance-me
+    
+  - name: remove container
+    command: sudo docker rm finance-me 
 
   - name: Deploy Docker Container
     command: docker run -itd -p 8084:8081 --name finance-me pruthvi5656/finance-me:1.0
