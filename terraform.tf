@@ -50,7 +50,7 @@ resource "aws_route_table" "proj-rt" {
 resource "aws_subnet" "proj-subnet" {
   vpc_id     = aws_vpc.proj-vpc.id
   cidr_block = "10.0.1.0/24"
-  availability_zone= "eu-north-1b"
+  availability_zone= "us-east-1a"
   tags = {
     Name = "subnet1"
   }
